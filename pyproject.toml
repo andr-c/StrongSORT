@@ -1,0 +1,14 @@
+[project]
+name = "strongsort"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "opencv-python>=4.12.0.88",
+    "scikit-learn>=1.7.2",
+    "scipy>=1.16.2",
+    "torch==2.7",
+    "torchaudio>=2.7.0",
+    "torchvision>=0.22.0",
+]

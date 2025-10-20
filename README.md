@@ -38,7 +38,7 @@ Existing Multi-Object Tracking (MOT) methods can be roughly classified as tracki
 1. Download MOT17 & MOT20 from the [official website](https://motchallenge.net/).
 
    ```
-   path_to_dataset/MOTChallenge
+   .data
    ├── MOT17
    	│   ├── test
    	│   └── train
@@ -50,7 +50,7 @@ Existing Multi-Object Tracking (MOT) methods can be roughly classified as tracki
 2. Download our prepared [data](https://drive.google.com/drive/folders/1Zk6TaSJPbpnqbz1w4kfhkKFCEzQbjfp_?usp=sharing) in Google disk (or [baidu disk](https://pan.baidu.com/s/1EtBbo-12xhjsqW5x-dYX8A?pwd=sort) with code "sort")
 
    ```
-   path_to_dataspace
+   .data
    ├── AFLink_epoch20.pth  # checkpoints for AFLink model
    ├── MOT17_ECC_test.json  # CMC model
    ├── MOT17_ECC_val.json  # CMC model

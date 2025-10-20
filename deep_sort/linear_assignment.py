@@ -1,7 +1,7 @@
 # vim: expandtab:ts=4:sw=4
 from __future__ import absolute_import
 import numpy as np
-from sklearn.utils.linear_assignment_ import linear_assignment
+from scipy.optimize import linear_sum_assignment as linear_assignment, linear_sum_assignment
 from . import kalman_filter
 from opts import opt
 
@@ -58,16 +58,16 @@ def min_cost_matching(
 
     cost_matrix_ = cost_matrix.copy()
 
-    indices = linear_assignment(cost_matrix_)
+    row_indices, col_indices = linear_sum_assignment(cost_matrix)
 
     matches, unmatched_tracks, unmatched_detections = [], [], []
     for col, detection_idx in enumerate(detection_indices):
-        if col not in indices[:, 1]:
+        if col not in col_indices:
             unmatched_detections.append(detection_idx)
     for row, track_idx in enumerate(track_indices):
-        if row not in indices[:, 0]:
+        if row not in row_indices:
             unmatched_tracks.append(track_idx)
-    for row, col in indices:
+    for row, col in zip(row_indices, col_indices):
         track_idx = track_indices[row]
         detection_idx = detection_indices[col]
         if cost_matrix[row, col] > max_distance:
